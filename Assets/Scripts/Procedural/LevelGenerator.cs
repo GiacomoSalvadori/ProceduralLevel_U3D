@@ -46,14 +46,14 @@ public class LevelGenerator : MonoBehaviour
         pathPoints = new PathPoints(Vector3.zero, Vector3.zero);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         Generate();
     }
 
-    public PathPoints Generate()
+    public void Generate()
     {
+        CleanLevel();
         Debug.Log("START TIME: " + System.DateTime.Now.ToString("G"));
         ConstructLevel();
         objPos.Clear();
@@ -63,17 +63,6 @@ public class LevelGenerator : MonoBehaviour
         objPos.Add(new Vector3(minX - levelSize, maxY + levelSize, 0.0f));
         cam.Recalculate(objPos);
         Debug.Log("END TIME: " + System.DateTime.Now.ToString("G"));
-
-        return pathPoints;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            CleanLevel();
-            Generate();
-        }
     }
 
     private void CreateHilbertCurve()

@@ -25,7 +25,6 @@ public class Grid : MonoBehaviour
     private HilbertDrawer drawer;
     #endregion
 
-    // Start is called before the first frame update
     void Start()
     {
         isPlaying = true;
@@ -41,7 +40,6 @@ public class Grid : MonoBehaviour
         CalculateGrid();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();

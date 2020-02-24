@@ -24,7 +24,7 @@ public class HilbertDrawer : MonoBehaviour
     private float LastZ = 0.0f;
     private float totalLength = 0.0f;
     private int pointsNumber;
-    private List<Point> points; //Point[,] points;
+    private List<Point> points;
     #endregion
 
     private void Awake()
@@ -34,7 +34,6 @@ public class HilbertDrawer : MonoBehaviour
         container.transform.position = transform.position;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         HilbertCalculator(level, size, 0);
